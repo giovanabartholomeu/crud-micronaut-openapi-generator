@@ -1,0 +1,12 @@
+example\micronaut\controller\$Controller$Definition$Intercepted.class
+META-INF\micronaut\io.micronaut.inject.BeanDefinitionReference\example.micronaut.controller.$Controller$Definition
+example\micronaut\api\DefaultApi.class
+example\micronaut\controller\Controller.class
+example\micronaut\model\$Product$Introspection.class
+META-INF\micronaut\io.micronaut.core.beans.BeanIntrospectionReference\example.micronaut.model.$Product$Introspection
+example\micronaut\Application.class
+example\micronaut\model\Product.class
+example\micronaut\controller\$Controller$Definition$Exec.class
+META-INF\micronaut\io.micronaut.inject.BeanDefinitionReference\example.micronaut.controller.$Controller$Definition$Intercepted$Definition
+example\micronaut\controller\$Controller$Definition$Intercepted$Definition.class
+example\micronaut\controller\$Controller$Definition.class

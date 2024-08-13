@@ -1,0 +1,7 @@
+.openapi-generator-ignore
+src/main/java/example/micronaut/api/DefaultApi.java
+src/main/java/example/micronaut/model/Product.java
+src/main/resources/application.yml
+src/main/resources/application.yml
+src/main/resources/logback.xml
+src/main/resources/logback.xml

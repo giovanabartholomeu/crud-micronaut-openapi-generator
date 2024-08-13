@@ -1,0 +1,116 @@
+openapi: 3.0.1
+info:
+  title: API de Produtos
+  description: API para gerenciar produtos em um inventário.
+  version: 1.0.0
+paths:
+  /products:
+    get:
+      summary: Listar Produtos
+      description: Retorna uma lista de todos os produtos.
+      responses:
+        '200':
+          description: Lista de produtos
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Product'
+    post:
+      summary: Adicionar Novo Produto
+      description: Adiciona um novo produto ao inventário.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Product'
+      responses:
+        '201':
+          description: Produto criado com sucesso
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'
+  /products/{productId}:
+    get:
+      summary: Obter Produto
+      description: Retorna um produto específico pelo ID.
+      parameters:
+        - name: productId
+          in: path
+          required: true
+          schema:
+            type: integer
+            example: 1
+      responses:
+        '200':
+          description: Detalhes do produto
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'
+        '404':
+          description: Produto não encontrado
+    put:
+      summary: Atualizar Produto
+      description: Atualiza as informações de um produto específico.
+      parameters:
+        - name: productId
+          in: path
+          required: true
+          schema:
+            type: integer
+            example: 1
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Product'
+      responses:
+        '200':
+          description: Produto atualizado com sucesso
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'
+        '404':
+          description: Produto não encontrado
+    delete:
+      summary: Excluir Produto
+      description: Exclui um produto específico pelo ID.
+      parameters:
+        - name: productId
+          in: path
+          required: true
+          schema:
+            type: integer
+            example: 1
+      responses:
+        '204':
+          description: Produto excluído com sucesso
+        '404':
+          description: Produto não encontrado
+components:
+  schemas:
+    Product:
+      type: object
+      properties:
+        id:
+          type: integer
+          description: ID do produto
+        name:
+          type: string
+          description: Nome do produto
+        description:
+          type: string
+          description: Descrição do produto
+        price:
+          type: number
+          format: float
+          description: Preço do produto
+      required:
+        - name
+        - price
